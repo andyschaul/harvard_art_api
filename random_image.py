@@ -10,6 +10,9 @@ import time
 
 
 def main():
+    '''
+    Script to load a random image from the Harvard Art Museums in your browser
+    '''
     # Set up
     # Load API key from environment
     # Request API key here: https://docs.google.com/forms/d/e/1FAIpQLSfkmEBqH76HLMMiCC-GPPnhcvHC9aJS86E32dOd0Z8MpY2rvQ/viewform
