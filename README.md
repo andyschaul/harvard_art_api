@@ -10,7 +10,7 @@ And save that key as an environment variable called 'harvard_art_api_key'
 ### Documentation here:
 https://github.com/harvardartmuseums/api-docs
 
-### A random image results:
+### A few random image results:
 ![alt text](https://ids.lib.harvard.edu/ids/view/18731880)
 
 ![alt text](https://ids.lib.harvard.edu/ids/view/20406527)
