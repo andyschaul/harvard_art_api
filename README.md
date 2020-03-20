@@ -13,7 +13,7 @@ A simple script to load a random image from the Harvard Art Museums collections 
 
 ### Harvard Art Museums Random Artist Opener
 
-A simple script to load a random artist page from the Harvard Art Museums collections in your browser. If there is a Wikipedia ID provided for the artist, that page will also open so you can learn more.
+A simple script to load a random artist page from the Harvard Art Museums collections in your browser. If there is a Wikipedia ID provided for the artist, that page will also open so you can learn more. 
 
 #### Documentation here:
 https://github.com/harvardartmuseums/api-docs
