@@ -11,13 +11,13 @@ import time
 
 def main():
     '''
-    Script to load a random image from the Harvard Art Museums in your browser
+    Script to load the webpage for a random artist from the Harvard Art Collections
     '''
     # Set up
     # Load API key from environment
     # Request API key here: https://docs.google.com/forms/d/e/1FAIpQLSfkmEBqH76HLMMiCC-GPPnhcvHC9aJS86E32dOd0Z8MpY2rvQ/viewform
     key = os.environ['harvard_art_api_key']
-    base_url = 'https://api.harvardartmuseums.org/image'
+    base_url = 'https://api.harvardartmuseums.org/person'
 
     # Parameters
     payload = {'apikey': key}
@@ -35,21 +35,30 @@ def main():
     payload['page'] = random_page
 
     # Get images for that page
-    images = requests.get(base_url, params=payload)
-    images = images.json()
-    images = images['records']
+    artists = requests.get(base_url, params=payload)
+    artists = artists.json()
+    artists = artists['records']
 
     # Choose random image from list of images
-    chosen_image = random.choice(images)
-    print(chosen_image)
-    chosen_image_url = chosen_image['baseimageurl']
+    chosen_artist = random.choice(artists)
+    print(chosen_artist)
+    chosen_artist_url = chosen_artist['url']
 
     # Open in browser
-    webbrowser.open(chosen_image_url)
+    webbrowser.open(chosen_artist_url)
+
+    # Open Wikipedia page in another tab
+    if 'wikipedia_id' in chosen_artist.keys():
+        wiki_id = chosen_artist['wikipedia_id']
+        base_wiki_url = 'http://en.wikipedia.org/?curid='
+        artist_wiki_url = base_wiki_url + wiki_id
+
+        webbrowser.open(artist_wiki_url)
+    else:
+        print('No Wikipeda ID available')
 
     # Pause
     time.sleep(1)
-
 
 if __name__ == "__main__":
     main()
